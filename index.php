@@ -69,7 +69,6 @@
 <body> 
 <div class="container">
     <h2>Perhitungan Gaji Tim Software</h2>
-
     <form action="" method="post">
         <label for="anggota">Nama Anggota</label>
         <select name="anggota" id="anggota" required>

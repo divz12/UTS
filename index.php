@@ -168,7 +168,7 @@
         $gaji = hitungGaji($posisi, $jamKerja, $nilaiProject);
 
         echo "<div class='hasil'>";
-        echo "<strong>Hasil Perhitungan Gaji untuk $anggota ($posisi):</strong><br>";
+        echo "<strong>Gaji untuk $anggota ($posisi):</strong><br><br>";
         echo "<p>Upah Kerja: Rp " . number_format($gaji['upahKerja'], 0, ',', '.') . "</p>";
         echo "<p>Upah Lembur: Rp " . number_format($gaji['upahLembur'], 0, ',', '.') . "</p>";
         echo "<p>Fee Project: Rp " . number_format($gaji['feeProject'], 0, ',', '.') . "</p>";

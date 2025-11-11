@@ -74,21 +74,22 @@
         <select name="anggota" id="anggota" required>
             <option value="">-- Pilih Anggota --</option>
             <?php
-            $anggota = ["Diva", "Haikal", "Reza", "Zahra", "Sipa"];
-            foreach ($anggota as $nama) {
-                echo "<option value='$nama'>$nama</option>";
-            }
+                $anggota = ["Diva", "Haikal", "Reza", "Zahra", "Sipa"];
+                foreach ($anggota as $nama) {
+                    echo "<option value='$nama'>$nama</option>";
+                }
             ?>
         </select>
 
         <label for="posisi">Posisi</label>
         <select name="posisi" id="posisi" required>
             <option value="">-- Pilih Posisi --</option>
-            <option value="Lead Developer">Lead Developer</option>
-            <option value="QA Engineer">QA Engineer</option>
-            <option value="DevOps Engineer">DevOps Engineer</option>
-            <option value="Backend Dev">Backend Dev</option>
-            <option value="Frontend Dev">Frontend Dev</option>
+            <?php
+                $PosisiTim = ["Lead Development", "QA Engineer", "DevOps Engineer", "Backend Dev", "Frontend Dev"];
+                foreach ($PosisiTim as $Posisi) {
+                    echo "<option>" . $Posisi . "</option>";
+                }
+            ?>
         </select>
 
         <label for="jamKerja">Jam Kerja (per bulan)</label>
@@ -112,7 +113,7 @@
         return $upah[$posisi];
     }
 
-    function PersentaseLembur($posisi) {
+    function Lembur($posisi) {
         $persen = [
             "Lead Developer" => 0.18,
             "QA Engineer" => 0.12,
@@ -123,7 +124,7 @@
         return $persen[$posisi];
     }
 
-    function PersentaseFee($posisi) {
+    function Fee($posisi) {
         $persen = [
             "Lead Developer" => 0.05,
             "QA Engineer" => 0.01,
@@ -144,10 +145,10 @@
         } else {
             $jamLembur = $jamKerja - $jamNormal;
             $upahKerja = $upahPerJam * $jamNormal;
-            $upahLembur = $upahPerJam * PersentaseLembur($posisi) * $jamLembur;
+            $upahLembur = $upahPerJam * Lembur($posisi) * $jamLembur;
         }
 
-        $feeProject = $nilaiProject * PersentaseFee($posisi);
+        $feeProject = $nilaiProject * Fee($posisi);
         $total = $upahKerja + $upahLembur + $feeProject;
 
         return [

@@ -12,6 +12,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin-bottom: 70px;
         }
         .container {
             background-color: white;
@@ -63,6 +64,26 @@
         }
         .hasil p {
             margin: 5px 0;
+        }
+        footer {
+            background: linear-gradient(90deg, #0d6efd, #4c8bfd);
+            color: #fff;
+            text-align: center;
+            padding: 14px 10px;
+            font-size: 14px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 -3px 10px rgba(0,0,0,0.1);
+            letter-spacing: 0.3px;
+        }
+        footer p {
+            margin: 4px 0;
+        }
+        footer .small {
+            font-size: 12px;
+            opacity: 0.9;
         }
     </style>
 </head>
@@ -178,5 +199,11 @@
     }
     ?>
 </div>
+
+<footer>
+    <p>&copy; 2025 <strong>Diva Oryza Sativa</strong> — 202404025</p>
+    <p class="small">Teknologi Rekayasa Perangkat Lunak</p>
+</footer>
+
 </body>
 </html>
